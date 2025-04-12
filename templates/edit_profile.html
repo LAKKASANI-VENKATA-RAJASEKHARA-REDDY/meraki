@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERAKI-JSSATEB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css' )}}">
+  </head>
+
+  <body>
+
+    <form action="/edit" method="post" class="edit_form">
+      <label >NAME </label>
+      <input class="edit_inp" type="text" required name="name">
+      <br>
+      <label >USN </label>
+      <input class="edit_inp" type="text" required name="usn">
+      <br>
+      <label >BRANCH </label>
+      <input class="edit_inp" type="text" required name="branch">
+      <br>
+      <label >POSITION </label>
+      <input class="edit_inp" type="text" required name="position">
+      <br>
+      <button type="submit" class="edit_but">Edit</button>
+    </form>
+
+    
+  </body>
+</html>

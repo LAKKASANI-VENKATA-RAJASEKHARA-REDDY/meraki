@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERAKI-JSSATEB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css' )}}">
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <div class="title">
+          <a href="{{url_for('home')}}" class="title">MERAKI</a>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('profile') }}">PROFILE</a>
+          <a href="#">LOGOUT</a>
+          <a href="{{ url_for('show_works') }}">WORKS</a>
+          <a href="{{ url_for('show_news') }}">ANNOUNCEMENTS</a>
+        </div>
+      </nav>
+    </header>
+
+    <form action="/upnews" method="post" class="news-writing">
+      <h2>📝 Share an Update</h2>
+      <p>Got an announcement, event, or exciting campus story? Let your peers know!</p>
+      <label for="description">Your Message:</label>
+      <textarea id="description" name="news" rows="4" placeholder="Write something impactful..."></textarea>
+      <button type="submit">📢 Post Announcement</button>
+    </form>
+    
+    
+  </body>
+</html>

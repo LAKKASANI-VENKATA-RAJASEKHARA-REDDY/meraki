@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERAKI-JSSATEB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css' )}}">
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <div class="title">
+          <a href="{{url_for('home')}}" class="title">MERAKI</a>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('profile') }}">PROFILE</a>
+          <a href="#">LOGOUT</a>
+          <a href="{{ url_for('show_works') }}">WORKS</a>
+          <a href="{{ url_for('show_news') }}">ANNOUNCEMENTS</a>
+        </div>
+      </nav>
+    </header>
+
+    <form action="/upwork" method="post" enctype="multipart/form-data" class="work-upload">
+      <h2>📚 Upload Your Thoughts</h2>
+      <p>Post your thoughts, plans, and bright ideas. Let MERAKI see your spark.
+      </p>
+      
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" placeholder="Enter a catchy title..." required>
+    
+      <label for="description">Description <span style="color: #888;">(optional)</span></label>
+      <textarea name="description" id="description" rows="4" placeholder="Tell us a little about your work..."></textarea>
+    
+      <label for="pdf">Upload PDF</label>
+      <input type="file" name="pdf" id="pdf" accept=".pdf" required>
+    
+      <button type="submit">🚀 Share with MERAKI</button>
+    </form>
+    
+    
+  </body>
+</html>

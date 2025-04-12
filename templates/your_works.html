@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERAKI-JSSATEB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css' )}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <div class="title">
+          <a href="{{url_for('home')}}" class="title">MERAKI</a>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('profile') }}">PROFILE</a>
+          <a href="#">LOGOUT</a>
+          <a href="{{ url_for('show_works') }}">WORKS</a>
+          <a href="{{ url_for('show_news') }}">ANNOUNCEMENTS</a>
+        </div>
+      </nav>
+    </header>
+    {% if your_works %}
+      <table>
+        <thead>
+          <tr>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>DOCUMENT</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in your_works %}
+            <tr>
+              <td>{{i.title}}</td>
+              <td>{{i.description}}</td>
+              <td><a href="{{ url_for('static', filename='uploads/' + i.filename) }}" target="_blank">View PDF</a></td>
+              <td><form class="delete-btn" action="/delete" method="post">
+                <input type="hidden" name="filename" value="{{ i.filename }}">
+                <button type="submit"><i class="fas fa-trash"></i></button>
+              </form>              
+              </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+    <div class="no-your_works">
+      <h1>🚧 No Works Yet</h1>
+      <p>Your creativity is waiting to shine. Share your first creation with MERAKI! ✨</p>
+    </div>    
+    
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERAKI-JSSATEB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css' )}}">
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <div class="title">
+          <a href="{{url_for('home')}}" class="title">MERAKI</a>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('profile') }}">PROFILE</a>
+          <a href="#">LOGOUT</a>
+          <a href="{{ url_for('show_works') }}">WORKS</a>
+          <a href="{{ url_for('show_news') }}">ANNOUNCEMENTS</a>
+        </div>
+      </nav>
+    </header>
+    {% if news %}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>News</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in news %}
+            <tr>
+              <td>{{i.name}}</td>
+              <td>{{i.news}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+    <div class="no-news">
+      <h1>📭 No Announcements Yet</h1>
+      <p>Looks like silence is in the air... Be the first to post something ! 🌟</p>
+    </div>
+    
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERAKI-JSSATEB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css' )}}">
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <div class="title">
+          <a href="{{url_for('home')}}" class="title">MERAKI</a>
+        </div>
+        <div class="nav-links">
+      
+          <a href="#">LOGOUT</a>
+          <a href="{{ url_for('show_your_works') }}">YOUR WORKS</a>
+          <a href="{{ url_for('show_your_news') }}">YOUR ANNOUNCEMENTS</a>
+        </div>
+      </nav>
+    </header>
+    
+    <div class="profile-card">
+      <h2 class="profile-heading">Welcome to MERAKI, <span>{{ name }}</span> 💫</h2>
+    
+      <div class="profile-info">
+        <p><strong>USN:</strong> <span>{{ usn }}</span></p>
+        <p><strong>Branch:</strong> <span>{{ branch }}</span></p>
+        <p><strong>Position:</strong> <span>{{ position }}</span></p>
+      </div>
+    </div>
+    <form action="/edit_profile" method="post" class="edit_form_single_button">
+      <button class="edit_profile_button" type="submit">Edit Profile</button>
+    </form>
+    
+    
+  </body>
+</html>

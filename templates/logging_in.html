@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MERAKI – JSSATEB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    
+
+    <main class="home">
+      <h2 style="text-align: center; color: #6a11cb; font-weight: 500; margin-bottom: 20px;">
+        ✨ Step In With Soul — Login to MERAKI 🎭
+      </h2>
+      
+
+      <form action="/logging_in" method="post" class="log_form">
+        <label class="log_lab">EMAIL-ID </label>
+        <input class="log_inp" type="email" required name="email">
+        <br>
+        <label class="log_lab">PASSWORD </label>
+        <input class="log_inp" type="password" required name="password">
+        <button type="submit" class="log_sub" style="color: #ddd;">Submit</button>
+        <p class="try_reg" style="text-align: center; margin-top: 20px;">
+          Does'nt have an account? 
+          <a href="{{ url_for('register') }}">Register here 💫</a>
+        </p>
+      </form>
+  
+
+      
+
+    </main>
+
+    <footer>
+      <p>Made with ❤️ by Team MERAKI | JSSATEB</p>
+      <p style="font-style: italic;">“Put your soul into it — that’s MERAKI.”</p>
+    </footer>
+
+  </body>
+</html>

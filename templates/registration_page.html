@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERAKI-JSSATEB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css' )}}">
+  </head>
+
+  <body>
+
+    
+
+    <div class="reg_div">
+      <form action="/registeration" method="post" class="reg_form">
+        {% if error_message %}
+          <a style="color:red">{{error_message}}</a>
+        {% else %}
+          <a style="color:red" type="hidden">{{error_message}}</a>
+        {% endif %}
+        <label class="reg_lab">Full Name</label>
+        <input class="reg_inp" type="text" name="name" placeholder="Enter your name" required>
+    
+        <label class="reg_lab">USN</label>
+        <input class="reg_inp" type="text" name="usn" placeholder="College USN" required>
+    
+        <label class="reg_lab">Branch</label>
+        <input class="reg_inp" type="text" name="branch" placeholder="Your branch of study" required>
+    
+        <label class="reg_lab">Position</label>
+        <input class="reg_inp" type="text" name="position" placeholder="Your role in the team" required>
+    
+        <label class="reg_lab">Email</label>
+        <input class="reg_inp" type="email" name="email" placeholder="Enter your email" required>
+    
+        <label class="reg_lab">Password</label>
+        <input class="reg_inp" type="password" name="password" placeholder="Create a strong password" required>
+    
+        <button type="submit" class="reg_sub">Register Now</button>
+        <p class="try_login" style="text-align: center; margin-top: 20px;">
+          Already have an account? 
+          <a href="{{ url_for('login') }}">Login here 💫</a>
+        </p>
+      </form>
+    
+      
+    </div>
+    
+  </body>
+</html>

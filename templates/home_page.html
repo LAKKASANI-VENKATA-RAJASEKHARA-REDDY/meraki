@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MERAKI – JSSATEB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <div class="title">
+          <a href="{{url_for('home')}}" class="title">MERAKI</a>
+        </div>
+        
+        <div class="nav-links">
+          <a href="{{ url_for('profile') }}">PROFILE</a>
+          {% if display == "no" %}
+            <a href="{{ url_for('logout') }}" style="display: none;">LOGOUT</a>
+          {% else %}
+            <a href="{{ url_for('logout') }}" >LOGOUT</a>
+          {% endif %}
+          <a href="{{ url_for('show_works') }}">WORKS</a>
+          <a href="{{ url_for('show_news') }}">ANNOUNCEMENTS</a>
+        </div>
+      </nav>
+    </header>
+    
+
+    <main class="home">
+
+      <section class="work">
+        <h2>Contribute Your Spark</h2>
+        <p>Have a project, idea, or innovation that reflects your passion?  
+        Share it with the MERAKI tribe.</p>
+        <form action="/work" method="post">
+          <button type="submit">SHARE YOUR CREATION</button>
+        </form>
+      </section>
+      
+
+      <section class="news">
+        <h2>Make an Announcement</h2>
+        <p>Keep the spirit of MERAKI alive by sharing exciting updates, upcoming events that light up our campus.</p>
+        <form action="/news" method="post">
+          <button type="submit">UPLOAD ANNOUNCEMENT</button>
+        </form>
+      </section>
+      
+
+    </main>
+
+    <footer>
+      <p>Made with ❤️ by Team MERAKI | JSSATEB</p>
+      <p style="font-style: italic;">“Put your soul into it — that’s MERAKI.”</p>
+    </footer>
+
+  </body>
+</html>

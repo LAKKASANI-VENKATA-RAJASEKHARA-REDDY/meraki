@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email | Meraki</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css' )}}">
+</head>
+<body>
+    <div class="verify_container" >
+        <div class="card">
+            <h1>Meraki</h1>
+            <h2>Email Verification</h2>
+            <p>Please enter the <strong>6-digit verification code</strong> sent to your email.</p>
+            
+            <form method="POST" action="/verify" class="verify-form">
+                <input type="text" name="otp" maxlength="6" required placeholder="Enter OTP Code">
+                <button type="submit">Verify</button>
+            </form>
+
+            <p class="resend-text" >Didn't receive it? <a  href="{{url_for('resend')}}">Resend Code</a></p>
+        </div>
+    </div>
+</body>
+</html>
