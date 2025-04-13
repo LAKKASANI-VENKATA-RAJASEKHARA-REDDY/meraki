@@ -7,11 +7,11 @@ import time
 
 def create_db_connection():
     return mysql.connector.connect(
-        host="crossover.proxy.rlwy.net",
-        user="root",
-        password="nYMLabGfqklOHiHhthPsSmZGZwgsMukU",
-        database="railway",
-        port=48105
+            host="turntable.proxy.rlwy.net",  
+            port=50630,
+            user="root",
+            password="eOZSmBgYTKoHmImLjyZSwwJCytAmfwYk",
+            database="meraki"                                
     )
 
 
