@@ -28,7 +28,7 @@ mail = Mail(app)
 
 @app.route('/')
 def home():
-  session.clear()
+  #session.clear()
   if 'status' not in session:
     return render_template('home_page.html', display="no")
   else:
